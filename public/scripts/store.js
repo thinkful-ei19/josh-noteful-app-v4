@@ -12,6 +12,7 @@ const store = (function () {
     currentQuery: {
       searchTerm: '',
     },
+    authToken: '',
     currentUser: {}
   };
 
