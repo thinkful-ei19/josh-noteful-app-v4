@@ -156,9 +156,13 @@ router.delete('/notes/:id', (req, res, next) => {
   const { id } = req.params;
   const userId = req.user.id;
 
-  Note.findByIdAndRemove({_id: id, userId})
-    .then(() => {
-      res.status(204).end();
+  Note.findOneAndRemove({_id: id, userId})
+    .then(result => {
+      if(result) {
+        res.status(204).end();
+      } else {
+        next();
+      }
     })
     .catch(err => {
       next(err);
