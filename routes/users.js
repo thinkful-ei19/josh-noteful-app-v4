@@ -65,14 +65,13 @@ router.post('/users', (req, res, next) => {
 
   if (tooLargeField) {
     const max = sizedFields[tooLargeField].max;
-    const err = new Error(`Field: '${tooSmallField}' must be at most ${max} characters long`);
+    const err = new Error(`Field: '${tooLargeField}' must be at most ${max} characters long`);
     err.status = 422;
     return next(err);
   }
 
   let { username, password, fullname = '' } = req.body;
   fullname = fullname.trim();
-
   return User.hashPassword(password)
     .then(digest => {
       const newUser = {
