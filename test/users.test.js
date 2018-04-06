@@ -4,7 +4,6 @@ const app = require('../server');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
 
 const { TEST_MONGODB_URI } = require('../config'); ('../config');
 
@@ -14,7 +13,7 @@ const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe.only('Noteful API - Users', function () {
+describe('Noteful API - Users', function () {
   const username = 'exampleUser';
   const password = 'examplePass';
   const fullname = 'Example User';
