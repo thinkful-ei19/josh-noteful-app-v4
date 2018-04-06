@@ -17,7 +17,7 @@ const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe.only('Noteful API - Tags', function () {
+describe('Noteful API - Tags', function () {
 
   let user;
   let token;
