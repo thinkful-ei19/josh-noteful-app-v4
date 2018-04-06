@@ -13,7 +13,7 @@ const User = require('../models/user');
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-describe.only('Noteful API - Login', function () {
+describe('Noteful API - Login', function () {
   const username = 'testUser';
   const password = 'testPass';
   const fullname = 'Test User';
